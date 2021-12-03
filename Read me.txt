@@ -1,0 +1,60 @@
+The Zip File contains 3 folders
+Dataset (inside csv folder containing .csv file)
+Research Papers
+Model Code                          
+
+   
+                         **Steps to run the program**
+
+1. If you want to run the program on a local device, download and install all 
+  the prerequisite python libraries, and give proper path to dataset.
+
+2. If you are running it over colaboratory, than the first thing to do is same as mentioned in (1)
+  download and install all the prerequisite python libraries. All of the libraries used 
+  are mentioned over the code
+
+3. Give a proper dataset path. We have given the path through Google Drive, so the first 
+   thing is to mount it over Colaboratory, for each and every new runtime. It contains 
+   total of 6392 images.
+
+   We then give the path through Google Drive for full_df.csv which contains detailed information
+   of dataset which conatains:
+
+   Normal (N),
+   Diabetes (D),
+   Glaucoma (G),
+   Cataract (C),
+   Age related Macular Degeneration (A),
+   Hypertension (H),
+   Pathological Myopia (M),
+   Other diseases/abnormalities (O)
+
+   Since our model is to detect cataract only. We sort out cataract and normal images from entire dataset
+   using csv file. 
+
+4. The next few cells contain preprocessing steps taken so that the dataset can be more properly considered 
+   by the model.
+
+5. We then create a two dataset containing sorted cataract and normal fundus images from (3). 
+   Normal   : 500 (250 to each left and right eye) and with 
+   cataract : 594 (304 for left eye and 290 for right eye). 
+   And plot sample random images from dataset.
+
+6. We create numpy array for images.
+
+7. Then use tain_test_split to split dataset images into testing and validation dataset
+   with 20% allocated for testing and remaining for validation.
+
+8. Import pretrained model architecture and then test using batch size of 32 and epoch values of 1,2,3....n.   
+   
+   In our project 3 different pretrained model (vgg19, resnet50 and mobilenetv1) are used and all the models are 
+   tested at epoch 5,10,15,20,25,30. Since
+
+9. After training each of the models, the loss score and the model accuracy is determined.
+
+10. The determined score is being plotted into a graph for simplication of the result.
+
+11. The result generated at each epoch of 3 different model is compared against each other to see which of them provide 
+    better accuracy score and lower loss score.
+
+                                 
